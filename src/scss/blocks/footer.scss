@@ -1,0 +1,64 @@
+@use '../mixins/flexbox.scss' as*;
+@use '../mixins/responsive.scss' as*;
+@use '../functions/image.scss' as*;
+@use '../mixins/hover.scss' as*;
+
+.footer{
+    height: 100%;
+    background-color: var(--dark-cyan);
+    text-align: left;
+    padding: 2rem 2rem;
+    &__column-first{
+        margin-bottom: 4rem;
+    }
+    @include responsive(laptop){
+        padding: 4rem 10rem;
+        @include flexbox(flex,row-reverse,nowrap,space-evenly,space-between);
+        gap: 300px;
+    }
+}
+
+.curve-bg-footer{
+    height: 53px;
+    background-image: image('bg-footer-top-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include responsive(laptop){
+        height: 150px;
+        background-image: image('bg-footer-top-desktop.svg');
+    }
+}
+.subscribe{
+    @include flexbox(flex,column,nowrap,space-between,end);
+    &__box{
+        width: 95%;
+        height: 40px;
+        background-color: white;
+        margin-bottom: 1rem;
+        @include responsive(laptop){
+            margin-bottom:0;
+        }
+    }
+    @include responsive(laptop){
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.contacts-list__item{
+    @include flexbox(flex,row,nowrap,start,center);
+    gap: 10px;
+}
+
+.social-list{
+    padding: 2rem 0;
+@include flexbox(flex,row,nowrap,start,center);
+gap: 15px;
+&__icon{
+    &:hover{
+        color: var(--blue-icon);
+    }
+
+}
+}

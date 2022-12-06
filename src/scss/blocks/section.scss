@@ -1,0 +1,76 @@
+@use '../mixins/flexbox.scss' as*;
+@use '../mixins/responsive.scss' as*;
+@use '../functions/image.scss' as*;
+.section{
+    height: 700px;
+    &__text{
+        padding: 0 2rem;
+    }
+    @include responsive(laptop){
+        @include flexbox(flex,row,nowrap,space-between,center);
+        gap:50px;
+        text-align: start;
+        height: 480px;
+        &__text{
+            width: 57%;
+            padding: 5rem;
+        }
+        &--reverse{
+            @include flexbox(flex,row-reverse,nowrap,space-between,center);
+        }
+    }
+    &--grow{
+        background-color: var(--light-cyan);
+     
+    }
+
+    &--users{
+        background-color: var(--light-cyan);
+    }
+}
+
+.curve-bg-top-first{
+    height: 170px;
+    background-image: image('bg-section-top-mobile-1.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    @include responsive(laptop){
+        background-image: image('bg-section-top-desktop-1.svg');
+    }
+}
+.curve-bg-bottom-first{
+    height: 112px;
+    background-image: image('bg-section-bottom-mobile-1.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    @include responsive(laptop){
+        background-image: image('bg-section-bottom-desktop-1.svg');
+    }
+}
+.curve-bg-top-second{
+    height: 170px;
+    background-image: image('bg-section-top-mobile-2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include responsive(laptop){
+        background-image: image('bg-section-top-desktop-2.svg');
+    }
+}
+.curve-bg-bottom-second{
+    height: 112px;
+    background-image: image('bg-section-bottom-mobile-2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    @include responsive(laptop){
+        background-image: image('bg-section-bottom-desktop-2.svg');
+        
+    }
+}
+
+
+
+
+

@@ -1,0 +1,41 @@
+@use '../mixins/responsive.scss' as*;
+@use '../config/variables.scss' as*;
+
+.main-title,
+.title{
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-cyan);
+}
+
+.main-title{
+    font-size: 1.9rem;
+    line-height: 2.5rem;
+    @include responsive(laptop){
+        font-size: 2.5rem;
+        line-height: 4rem;
+    }
+}
+
+.title{
+    font-size: 1.4rem;
+    
+    &--number{
+        font-size: 4rem;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        &-big{
+            font-size: 3.5rem;
+            margin: 0;
+            margin-left: auto;
+            margin-right: auto;
+            @include responsive(laptop){
+            font-size: 4rem;
+            }
+        }
+    }
+    &--footer{
+        color: var(--white);
+    }
+    
+}

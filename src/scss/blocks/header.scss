@@ -1,0 +1,56 @@
+@use '../functions/image.scss' as *;
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/flexbox.scss' as *;
+
+.header{
+    margin-bottom: 1rem;
+    
+
+
+    &__top{
+        @include flexbox(flex,row,nowrap,space-between,center);
+        padding: 1rem;
+        margin-bottom: 5rem;
+    }
+
+    &__content{
+        padding: 0 3rem;
+        @include responsive(laptop){
+            @include flexbox(flex,column,nowrap,center,center);
+            gap:50px;
+            
+        }
+    }
+    &__text{
+    margin-bottom: 3rem;
+}
+    &__button{
+    padding-top: 3rem;
+    }
+}
+
+.community-list{
+    width: 200px;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 8rem;
+   @include flexbox(flex,column,nowrap,center,center);
+   gap: 50px;
+   @include responsive(laptop){
+    width: 600px;
+    justify-content: space-between;
+    flex-direction: row;
+    
+   }
+
+    &__item{
+        @include flexbox(flex,column,nowrap,center,baseline);
+        padding: 3rem 0;
+        
+    }
+     &__icon{
+        width: 40px;
+        
+     }
+}
+
